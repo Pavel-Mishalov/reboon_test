@@ -15,12 +15,12 @@
  */
 
 function count_in_page( string $pattern, string $body ){
-  if( !empty( $pattern ) && !empty( $body ) ){
+  if( !empty( $pattern ) && !empty( $body ) ):
     $count = preg_match_all("~(" . $pattern .")~", $body, $inPage);
     return $count;
-  }else{
-    return false;
-  }
+  endif;
+  
+  return false;
 }
 
 
@@ -127,3 +127,7 @@ function topMenuSubmit(){
 BODY;
 
 var_dump( count_in_page( $pattern, $body ) );
+
+////////////////////
+// Выведет int(3) //
+////////////////////
